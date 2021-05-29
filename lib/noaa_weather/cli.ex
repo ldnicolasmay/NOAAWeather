@@ -19,11 +19,11 @@ defmodule NOAAWeather.CLI do
   a table of the most current hourly weather data at a given airport, indicated by ICAO code.
   """
 
-  # def main(argv) do 
   # mix run -e 'NOAAWeather.CLI.run(["--help"])'
   # mix run -e 'NOAAWeather.CLI.run(["--icao-code", "KDTO", "temp_f", "temp_c", "wind_dir"])'
   # mix run -e 'NOAAWeather.CLI.run(["temp_f", "temp_c", "wind_dir"])'
-  def run(argv) do 
+  # def run(argv) do 
+  def main(argv) do 
     argv
     |> parse_args()
     |> process()

@@ -1,4 +1,4 @@
-defmodule NoaaWeather.MixProject do
+defmodule NOAAWeather.MixProject do
   use Mix.Project
 
   def project do
@@ -7,7 +7,10 @@ defmodule NoaaWeather.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      escript: escript(),
+      name: "NOAAWeather",
+      source_url: "https://github.com/ldnicolasmay/noaa_weather"
     ]
   end
 
@@ -26,5 +29,9 @@ defmodule NoaaWeather.MixProject do
       {:httpoison, "~> 1.8"},
       {:elixir_xml_to_map, "~>2.0"},
     ]
+  end
+
+  defp escript() do
+    [main_module: NOAAWeather.CLI]
   end
 end
