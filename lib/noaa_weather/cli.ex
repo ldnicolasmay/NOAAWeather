@@ -3,7 +3,8 @@ defmodule NOAAWeather.CLI do
   # import OptionParser, only: [parse: 2]
   # import NOAAWeather.NOAAWeather, only: [fetch: 1]
 
-  @default_icao_code "KFLG"
+  # @default_icao_code "KFLG"
+  @default_icao_code "KARB"
   @default_measures_list [
     "location",
     "station_id",
@@ -63,7 +64,8 @@ defmodule NOAAWeather.CLI do
     |> decode_response()
     # |> IO.inspect()
     |> get_measures(measures_list)
-    |> IO.inspect()
+    # |> IO.inspect()
+    |> TableFormatter.print_table()
   end
     
   def process(:help) do
@@ -108,7 +110,8 @@ defmodule NOAAWeather.CLI do
   def get_measures(measures_map, measures_list) do 
     with measures = for m <- measures_list, do: measures_map[m]
     do 
-      Enum.zip(measures_list, measures)
+      # Enum.zip(measures_list, measures)
+      {measures_list, measures}
     end
   end
 end
