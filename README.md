@@ -1,6 +1,6 @@
 # NoaaWeather
 
-**TODO: Add description**
+Elixir CLI utility to retrieve NOAA current weather for an airport's ICAO code.
 
 ## Installation
 
