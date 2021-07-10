@@ -70,7 +70,7 @@ defmodule NOAAWeather.CLI do
     
   def process(:help) do
     IO.puts("""
-    usage: noaa_weather [<icao_code> | #{@default_icao_code}] [measure, [measure, [...]]]
+    usage: noaa_weather [--icao-code <icao_code> | #{@default_icao_code}] [measure, [measure, [...]]]
 
     measures include:
       location
